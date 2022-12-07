@@ -6,6 +6,8 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        $db = db_connect();
+        $data['station'] = $db->table('stations')->get()->getResult();
+        return view('index', $data);
     }
 }
