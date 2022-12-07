@@ -32,10 +32,10 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => '',
-        'password' => '',
-        'database' => '',
+        'hostname' => '34.28.192.1',
+        'username' => 'admin',
+        'password' => 'admin@erailway123',
+        'database' => 'erailway',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
