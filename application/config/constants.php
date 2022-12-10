@@ -83,3 +83,10 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+/*constant manual*/
+define('APPNAME',"erailway");
+define('MAIN_DOMAIN', "http://".$_SERVER['SERVER_NAME']);
+define('ROOT', MAIN_DOMAIN."/".APPNAME."/index.php/");
+define('APP_ROOT', MAIN_DOMAIN."/".APPNAME."/");
+define('UPLOADFOLDER_', $_SERVER['DOCUMENT_ROOT']."/".APPNAME."/");
