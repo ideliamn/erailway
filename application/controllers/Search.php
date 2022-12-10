@@ -20,7 +20,9 @@ class Search extends CI_Controller {
 	 */
 	public function index()
 	{
-        $data['station'] = $this->db->get('stations')->result();
+        $this->db->from('stations');
+		$this->db->order_by('name', 'asc');
+		$data['station'] = $this->db->get()->result();
 		$this->load->view('search/index', $data);
 	}
 }

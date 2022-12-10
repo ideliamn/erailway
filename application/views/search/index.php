@@ -32,7 +32,7 @@
 				<div class="row">
 					<div class="col">
 						<label class="py-3">Tanggal Keberangkatan</label>
-						<input class="form-control" type="date" name="depart_date" required/>
+						<input class="form-control" type="date" name="depart_time" required/>
 					</div>
 				</div>
 				<div class="flex-column text-center px-5 py-2 mt-3 mb-3">
