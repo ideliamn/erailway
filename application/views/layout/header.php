@@ -10,9 +10,10 @@
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>" />
+	<link rel="stylesheet" href="<?= base_url('assets/css/styles.css') ?>" />
 </head>
 
-<body>
+<body style="margin-bottom: 10rem !important">
 
     <?php $this->load->view('layout/navbar') ?>
 
