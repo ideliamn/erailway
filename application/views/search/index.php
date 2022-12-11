@@ -3,7 +3,7 @@
 <div class="container mt-3 mb-3 justify-content-center d-flex">
 	<div class="card px-2 py-2" style="width: 40rem;">
 		<div class="card-body">
-			<h3 class="py-3 d-flex text-center">PEMESANAN TIKET</h3>
+			<h3 class="py-3 d-flex text-center">PENCARIAN TIKET</h3>
 			<form action="<?= base_url().'schedule' ?>" method="POST">
 				<div class="row">
 					<div class="col">

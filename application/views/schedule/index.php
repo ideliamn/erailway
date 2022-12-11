@@ -8,7 +8,7 @@
                     <div class="col-3 mx-2">
                         <label class="row text-center">Kereta</label>
                     </div>
-                    <div class="col-7 mx-2">
+                    <div class="col-6 mx-2">
                         <div class="row">
                             <div class="col">
                                 <div class="row">
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-1 mx-2">
+                    <div class="col-2 mx-2">
                         <label class="row text-center">Harga</label>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                             <label class="row font-weight-bold"><?= $s->name ?></label>
                             <label class="row"><?= $s->class ?></label>
                         </div>
-                        <div class="col-7 mx-2">
+                        <div class="col-6 mx-2">
                             <div class="row">
                                 <div class="col">
                                     <div class="row">
@@ -97,15 +97,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-1 mx-2">
+                        <div class="col-2 mx-2">
                             <label class="row font-weight-bold">
                                 <?php echo ("Rp " . number_format($s->price, 0, ",", ".")) ?>
                             </label>
                             <label class="row font-weight-bold">
-                                <?php echo($s->remaining_seats == 0 ? 'Habis' : 'Tersedia') ?>
+                                <?php echo ($s->remaining_seats == 0 ? 'Habis' : 'Tersedia') ?>
                             </label>
                             <div class="row">
-                                <a class="px-3 py-2 my-2 btn btn-primary btn-block confirm-button <?php echo($s->remaining_seats == 0 ? 'disabled' : '') ?>" href="<?= base_url().'book?id='.$s->id ?>">PESAN</a>
+                                <button data-user="<?= $this->session->id ? $this->session->id : null ?>" data-book="<?= $s->id ?>" class="px-3 py-2 my-2 btn btn-primary btn-block confirm-button button-book <?php echo ($s->remaining_seats == 0 ? 'disabled' : '') ?>">PESAN</button>
                             </div>
                         </div>
                     </div>
@@ -114,5 +114,27 @@
         </div>
     <?php endforeach ?>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        // swal check if user login
+        $(document).on('click', '.button-book', function(e) {
+            e.preventDefault()
+            let data_user = $(this).data('user')
+            let book_id = $(this).data('book');
+            console.log(book_id);
+            if(!data_user) {
+                Swal.fire({
+                    title: "Login dahulu sebelum melakukan pemesanan!",
+                    icon: "warning"
+                }).then(function() {
+                    window.location = base_url + "login";
+                });
+            } else {
+                window.location = base_url + "book" + "?id="+book_id;
+            }
+        });
+    });
+</script>
 
 <?php $this->load->view('layout/footer') ?>

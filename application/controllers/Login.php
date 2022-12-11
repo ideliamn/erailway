@@ -40,7 +40,6 @@ class Login extends CI_Controller
 			$this->db->where('email', $email_or_phone);
 			$this->db->or_where('phone', $email_or_phone);
 			$user = $this->db->get()->row();
-			// var_dump($this->input->post('email_or_phone'));die;
 
 			if (!$user) {
 				throw new Exception("User dengan e-mail atau nomor handphone tersebut tidak ditemukan!");
