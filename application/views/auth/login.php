@@ -37,7 +37,7 @@
             if (passwordInput.type === "password") {
                 passwordInput.type = "text"
                 tooglePassword.className = 'fas fa-eye'
-            } else { //jfajfajfnaj
+            } else {
                 passwordInput.type = "password"
                 tooglePassword.className = 'fas fa-eye-slash'
             }
