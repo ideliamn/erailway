@@ -32,7 +32,7 @@ class Schedule extends CI_Controller {
 		(
 		(SELECT t2.seats_number FROM trains t2 JOIN schedules s2 ON s2.train_id = t2.id WHERE s2.id = s.id)
 		-
-		(SELECT COUNT(*) AS booked_seats FROM seats s3 JOIN bookings_detail bd ON bd.seat_id = s3.id JOIN bookings b2 ON b2.id = bd.booking_id JOIN payments p ON p.booking_id = b2.id WHERE b2.schedule_id = s.id
+		(SELECT COUNT(*) AS booked_seats FROM seats s3 JOIN bookings_detail bd ON bd.seat_id = s3.id JOIN bookings b2 ON b2.id = bd.booking_id JOIN payments p ON p.booking_id = b2.id WHERE b2.schedule_id = s.id)
 		) AS remaining_seats
 		FROM 
 		schedules s
