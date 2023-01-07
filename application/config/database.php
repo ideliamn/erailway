@@ -75,8 +75,8 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '34.28.192.1',
-	'username' => 'admin',
+	'hostname' => '34.128.86.7',
+	'username' => 'root',
     'password' => 'admin@erailway123',
     'database' => 'erailway',
 	'dbdriver' => 'mysqli',
