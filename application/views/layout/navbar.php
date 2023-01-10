@@ -13,7 +13,7 @@
             <?php if ($this->session->id) : ?>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">My Booking</a>
+                        <a class="nav-link" href="<?= base_url() . 'mybooking' ?>">My Booking</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link button-logout" href="javascript:void(0)">Logout</a>

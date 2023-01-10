@@ -120,7 +120,7 @@
 							title: data.message,
 							icon: "success"
 						}).then(function() {
-							window.location = base_url + "payment";
+							window.location = base_url + "mybooking";
 						});
 					} else {
 						Swal.fire({

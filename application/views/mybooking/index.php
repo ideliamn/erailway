@@ -1,19 +1,24 @@
 <?php $this->load->view('layout/header') ?>
 
-<div class="container my-5 justify-content-center">
-	<form id="form-payment" action="" method="POST">
-		<div class="row justify-content-center">
-			<div class="col-6 mx-4">
-				<div class="py-2 mt-3 mb-3" style="text-align: right;">
-					<button type="submit" class="btn btn-primary btn-block book-button">Pembayaran</button>
-				</div>
-			</div>
-			<div class="col-4 mx-3">
-				<div class="card card-body">
-					<h3 class="px-2 py-2 text-center">Data Tiket</h3>
+<div class="container mt-3 mb-3 align-items-center justify-content-center">
+    <?php foreach ($mybooking as $m) : ?>
+        <div class="row py-2 align-items-center justify-content-center">
+            <div class="card px-2 py-1" style="width: 90%">
+                <div class="card-body">
+                    <div class="row">
+						<span>Tanggal Pemesanan: <?php echo date('d F Y H:i:s', strtotime($m->booking_time)); ?></span>
+						<br><br>
+                        <h5><b><?= $m->train_name ?></b></h5>
+						<span><?= $m->class ?></span>
+                    </div>
 					<div class="row px-2 py-3">
 						<div class="col">
 							<div class="row">
+								<b><label class="row"><?= $m->station_from ?></label></b>
+								<label class="row">
+									<?php echo date('d F Y', strtotime($m->depart_time)); ?>
+									<?php echo date('H:i', strtotime($m->depart_time)); ?>
+								</label>
 							</div>
 						</div>
 						<div class="col justify-content-center mt-3">
@@ -21,13 +26,24 @@
 						</div>
 						<div class="col">
 							<div class="row">
+								<b><label class="row"><?= $m->station_to ?></label></b>
+								<label class="row">
+									<?php echo date('d F Y', strtotime($m->arrive_time)); ?>
+									<?php echo date('H:i', strtotime($m->arrive_time)); ?>
+								</label>
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<span>Jumlah tiket dipesan: <?= $m->ticket_count ?></span>
+					</div>
+                </div>
+				<div class="py-2 px-2" style="text-align: right;">
+					<a class="btn btn-primary btn-block " href="<?= base_url().'mybooking/detail?id='.$m->id ?>">Lihat Detail</a>
 				</div>
-			</div>
-		</div>
-	</form>
+            </div>
+        </div>
+    <?php endforeach ?>
 </div>
 
 <script type="text/javascript">

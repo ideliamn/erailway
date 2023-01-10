@@ -86,6 +86,11 @@ class Book extends CI_Controller
 				$nik[] = $n;
 			}
 
+			$seat = [];
+			foreach ($this->input->post('seat') as $n) {
+				$seat[] = $n;
+			}
+
 			$data_booking = [
 				'user_id' => $this->session->id,
 				'schedule_id' => $this->input->post('schedule_id'),
